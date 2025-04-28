@@ -28,6 +28,7 @@ h1, h2, h3, .step-title {
   font-weight: 700;
   font-size: 1.3rem;
   letter-spacing: 0.5px;
+  white-space: nowrap;
 }
 
 .header-right {
@@ -81,6 +82,7 @@ h1, h2, h3, .step-title {
   font-size: 0.95rem;
   margin-left: 16px;
   border-radius: 18px;
+  white-space: nowrap;
 }
 
 .hero,
@@ -220,6 +222,25 @@ h1, h2, h3, .step-title {
   color: #555;
 }
 
+.get-started .btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 32px;
+  background: #A259FF;
+  color: white;
+  border-radius: 32px;
+  font-size: 16px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  width: auto;
+  max-width: 200px;
+}
+
+.get-started .btn:hover {
+  background: #8347D4;
+}
+
 .job-search {
   display: flex;
   gap: 16px;
@@ -316,6 +337,7 @@ h1, h2, h3, .step-title {
   font-size: 0.95rem;
   font-weight: 600;
 }
+
 .img-stack {
   position: relative;
   display: inline-block;
@@ -408,33 +430,134 @@ h1, h2, h3, .step-title {
 }
 
 @media (max-width: 600px) {
-  .main-header, .hero, .upload-cv, .get-started, .how-works {
-    border-radius: 0;
+  .main-header {
+    padding: 16px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+  }
+
+  .header-left {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    order: 1;
+  }
+
+  .header-right {
+    display: flex;
+    align-items: center;
+    order: 2;
+  }
+
+  .header-nav {
+    display: none !important;
+  }
+
+  .btn-small {
     margin: 0;
-    padding: 18px 0;
+    white-space: nowrap;
+    background: #F1F1F1;
+    color: #666;
   }
-  .hero-img img, .upload-img img {
+
+  .btn-small:hover {
+    background: #E5E5E5;
+    color: #444;
+  }
+
+  .hero {
+    flex-direction: column;
+    padding: 24px;
+    height: auto;
     width: 100%;
-    max-width: 320px;
   }
+
+  .hero-content {
+    text-align: center;
+    order: 2;
+  }
+
+  .hero-img {
+    order: 1;
+    display: block;
+    margin-bottom: 32px;
+  }
+
+  .hero-img img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    border-radius: 16px;
+  }
+
+  .hero-content h1 {
+    font-size: 32px;
+    margin-bottom: 16px;
+  }
+
+  .hero-content .desc {
+    font-size: 16px;
+    color: #666;
+    margin-bottom: 24px;
+    line-height: 1.5;
+  }
+
+  .how-works h2 {
+    font-size: 32px;
+    padding: 24px 16px;
+  }
+
   .steps {
+    flex-direction: column;
+    align-items: center;
+    gap: 32px;
+  }
+
+  .step {
+    max-width: 100%;
+  }
+
+  .get-started {
+    padding: 24px;
+    text-align: center;
+  }
+
+  .job-search {
     flex-direction: column;
     gap: 16px;
   }
-  .main-footer {
-    border-radius: 0;
-    margin: 0;
-    padding: 18px 0 12px 0;
+
+  .job-search input {
+    width: 100%;
   }
+
+  .upload-cv {
+    flex-direction: column;
+    padding: 24px;
+    gap: 24px;
+  }
+
+  .upload-content {
+    text-align: center;
+  }
+
   .img-stack img {
     width: 100%;
-    max-width: 100vw;
+    max-width: 100%;
+    height: auto;
+    border-radius: 16px;
   }
-  .hero, .upload-cv, .get-started, .how-works {
-    margin-bottom: 0;
-    margin-top: 0;
+
+  .footer-top {
+    flex-direction: column;
+    gap: 24px;
+    text-align: center;
   }
-  .main-footer {
-    margin-top: 0;
+
+  .footer-links {
+    flex-direction: column;
+    gap: 16px;
   }
 }
